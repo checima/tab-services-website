@@ -1,0 +1,5 @@
+# Netlify configuration
+# Netlify serves "pretty URLs" automatically: /about-us resolves to about-us.html,
+# and visiting /about-us.html redirects to /about-us. No extra rules needed.
+[build]
+  publish = "."

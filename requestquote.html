@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quote Request | TAB Services Company</title>
+  <meta name="description" content="Request a price quote from TAB Services Company for HVAC testing, adjusting and balancing and critical facility services." />
+  <link rel="icon" type="image/png" href="assets/img/logo-white.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;500;600;700&family=Barlow+Semi+Condensed:wght@500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+</head>
+<body>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container site-header__inner">
+      <a href="index.html" class="brand" aria-label="TAB Services Company — Home">
+        <img src="assets/img/logo-white.png" alt="TAB Services Company" class="brand__logo" />
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <ul class="nav__list">
+          <li class="nav__item has-dropdown">
+            <a href="about-us.html" class="nav__link">About Us</a>
+            <ul class="dropdown">
+              <li><a href="about-us.html">About Us</a></li>
+              <li><a href="faqs.html">FAQs</a></li>
+            </ul>
+          </li>
+          <li class="nav__item has-dropdown">
+            <a href="services.html" class="nav__link">Services</a>
+            <ul class="dropdown">
+              <li><a href="hvactabservices.html">Testing, Adjusting &amp; Balancing</a></li>
+              <li><a href="pressuretesting.html">Critical Area Pressure Services</a></li>
+              <li><a href="bscfhtesting.html">BSC &amp; Fume Hood Testing</a></li>
+              <li><a href="firelifesafetyinspections.html">Fire &amp; Life Safety Inspections</a></li>
+              <li><a href="specializedconsulting.html">Specialized Consulting Services</a></li>
+            </ul>
+          </li>
+          <li class="nav__item has-dropdown">
+            <a href="facilities-served.html" class="nav__link">Facilities Served</a>
+            <ul class="dropdown">
+              <li><a href="facilities-served.html">Facilities Served</a></li>
+              <li><a href="past-projects.html">Past Projects</a></li>
+            </ul>
+          </li>
+          <li class="nav__item"><a href="requestquote.html" class="nav__link" aria-current="page">Quote Request</a></li>
+          <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="requestquote.html" class="btn btn--gold btn--sm header__cta">Request a Quote</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <nav aria-label="Mobile">
+      <a href="about-us.html">About Us</a>
+      <a href="faqs.html" class="mobile-menu__sub">FAQs</a>
+      <a href="services.html">Services</a>
+      <a href="hvactabservices.html" class="mobile-menu__sub">Testing, Adjusting &amp; Balancing</a>
+      <a href="pressuretesting.html" class="mobile-menu__sub">Critical Area Pressure Services</a>
+      <a href="bscfhtesting.html" class="mobile-menu__sub">BSC &amp; Fume Hood Testing</a>
+      <a href="firelifesafetyinspections.html" class="mobile-menu__sub">Fire &amp; Life Safety Inspections</a>
+      <a href="specializedconsulting.html" class="mobile-menu__sub">Specialized Consulting Services</a>
+      <a href="facilities-served.html">Facilities Served</a>
+      <a href="past-projects.html" class="mobile-menu__sub">Past Projects</a>
+      <a href="requestquote.html" aria-current="page">Quote Request</a>
+      <a href="contact.html">Contact</a>
+      <a href="requestquote.html" class="btn btn--gold mobile-menu__cta">Request a Quote</a>
+    </nav>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero__bg" aria-hidden="true"></div>
+    <div class="page-hero__scrim" aria-hidden="true"></div>
+    <div class="page-hero__grain" aria-hidden="true"></div>
+    <div class="container page-hero__inner">
+      <p class="page-hero__eyebrow"><span class="tick" aria-hidden="true"></span>Balancing critical facility systems for peak performance</p>
+      <h1 class="page-hero__title">Request a Quote</h1>
+    </div>
+    <div class="page-hero__ruler" aria-hidden="true"></div>
+  </section>
+
+  <!-- QUOTE FORM -->
+  <section class="section">
+    <div class="container">
+      <div class="form-layout">
+
+        <div>
+          <p class="form-intro reveal">Please fill out the information below if you would like a quote. You may also email us directly at <a href="mailto:estimating@tabservicescolorado.com">estimating@tabservicescolorado.com</a>.</p>
+
+          <!-- Web3Forms: replace YOUR_WEB3FORMS_ACCESS_KEY with the access key emailed from web3forms.com (register it for tab@tabservicescolorado.com). Submissions are sent to that address; add clau@tabservicescolorado.com as a CC in the Web3Forms dashboard. -->
+          <form class="form reveal" data-web3form data-success="Thanks! We'll send you a price quote shortly." action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="6062f410-08b1-4a37-8a2b-7b10edbcffab" />
+            <input type="hidden" name="from_name" value="TAB Services Website" />
+            <input type="hidden" name="subject" value="New Quote Request — TAB Services Website" />
+            <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off" />
+
+            <div class="form-grid">
+              <div class="field">
+                <label for="q-bidby">Bid Requested By</label>
+                <input type="text" id="q-bidby" name="Bid Requested By" />
+              </div>
+              <div class="field">
+                <label for="q-individual">Individual Making Request, Title</label>
+                <input type="text" id="q-individual" name="Individual Making Request, Title" />
+              </div>
+            </div>
+
+            <div class="field field--full">
+              <label for="q-email">Email <span class="req">*</span></label>
+              <input type="email" id="q-email" name="Email" required />
+            </div>
+
+            <div class="field field--full">
+              <label for="q-phone">Phone</label>
+              <div class="phone-row">
+                <input type="text" id="q-code" name="code" aria-label="Code" placeholder="Code" />
+                <input type="tel" id="q-phone" name="phone" placeholder="Phone number" />
+              </div>
+            </div>
+
+            <div class="field field--full">
+              <label for="q-project">Project Description and/or Address</label>
+              <input type="text" id="q-project" name="Project Description and/or Address" />
+            </div>
+
+            <div class="field field--full">
+              <label for="q-service">Select a Service</label>
+              <select id="q-service" name="Select a Service">
+                <option value="" disabled selected>Choose an option</option>
+                <option value="HVAC Testing, Adjusting &amp; Balancing">HVAC Testing, Adjusting &amp; Balancing</option>
+                <option value="Critical Area Pressure Services">Critical Area Pressure Services</option>
+                <option value="BSC &amp; Fume Hood Testing">BSC &amp; Fume Hood Testing</option>
+                <option value="Fire &amp; Life Safety Inspections">Fire &amp; Life Safety Inspections</option>
+                <option value="Specialized Consulting Services">Specialized Consulting Services</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="field field--full">
+              <label for="q-prints">Link to prints or project detail (if prints are not available online, please attach below or email them directly to us)</label>
+              <input type="text" id="q-prints" name="Link to prints" />
+            </div>
+
+            <div class="form-grid">
+              <div class="field">
+                <label for="q-duedate">Bid Due Date</label>
+                <input type="date" id="q-duedate" name="Bid Due Date" />
+              </div>
+              <div class="field">
+                <label for="q-timing">Estimated Project Timing</label>
+                <input type="text" id="q-timing" name="Estimated Project Timing" />
+              </div>
+            </div>
+
+            <div class="field field--full">
+              <label for="q-details">Additional Details</label>
+              <textarea id="q-details" name="Additional Details"></textarea>
+            </div>
+
+            <div class="field field--full">
+              <label for="q-upload">Upload File</label>
+              <label class="upload"><input type="file" id="q-upload" name="attachment" /><span class="upload__label">Click to upload a file</span><span class="upload__hint">Upload supported file (Max 15MB)</span><span class="upload__file"></span></label>
+            </div>
+
+            <div class="form-status" aria-live="polite"></div>
+            <button type="submit" class="btn btn--gold btn--submit">Request a Quote</button>
+          </form>
+        </div>
+
+        <aside class="form-aside reveal">
+          <h3>Call Us</h3>
+          <p><a href="tel:+13036491213">Tel: (303) 649-1213</a></p>
+          <h3>Email Us</h3>
+          <p>General &amp; Employment: <a href="mailto:tab@tabservicescolorado.com">tab@tabservicescolorado.com</a><br>Quotes &amp; Estimates: <a href="mailto:estimating@tabservicescolorado.com">estimating@tabservicescolorado.com</a><br>Payments &amp; Invoicing: <a href="mailto:invoicing@tabservicescolorado.com">invoicing@tabservicescolorado.com</a></p>
+          <h3>Visit Us</h3>
+          <address>2065 S. Raritan St., Unit A<br>Denver, CO 80223</address>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container site-footer__top">
+      <div class="site-footer__brand">
+        <img src="assets/img/logo-white.png" alt="TAB Services Company" class="site-footer__logo" />
+        <p class="site-footer__tag">Balancing critical facility systems for peak performance.</p>
+      </div>
+      <div class="site-footer__col">
+        <h4 class="site-footer__heading">Our Services</h4>
+        <ul>
+          <li><a href="hvactabservices.html">HVAC Testing, Adjusting, &amp; Balancing</a></li>
+          <li><a href="pressuretesting.html">Healthcare Pressure Testing</a></li>
+          <li><a href="bscfhtesting.html">BSC and Fume Hood Testing</a></li>
+          <li><a href="firelifesafetyinspections.html">Fire &amp; Life Safety Inspections</a></li>
+          <li><a href="specializedconsulting.html">Specialized Consulting Services</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__col">
+        <h4 class="site-footer__heading">Call Us</h4>
+        <ul><li><a href="tel:+13036491213">Tel: (303) 649-1213</a></li></ul>
+        <h4 class="site-footer__heading">Email Us</h4>
+        <ul class="site-footer__emails">
+          <li>General &amp; Employment: <a href="mailto:tab@tabservicescolorado.com">tab@tabservicescolorado.com</a></li>
+          <li>Quotes &amp; Estimates: <a href="mailto:estimating@tabservicescolorado.com">estimating@tabservicescolorado.com</a></li>
+          <li>Payments &amp; Invoicing: <a href="mailto:invoicing@tabservicescolorado.com">invoicing@tabservicescolorado.com</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__col">
+        <h4 class="site-footer__heading">Visit Us</h4>
+        <address>2065 S. Raritan St., Unit A<br />Denver, CO 80223</address>
+      </div>
+    </div>
+    <div class="container site-footer__bottom">
+      <span>&copy; 2025 TAB Services Company. All Rights Reserved.</span>
+      <span class="site-footer__ruler" aria-hidden="true"></span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
