@@ -352,14 +352,18 @@
 }
 .split-text-media__media::after {
   content: ""; position: absolute; inset: 0; pointer-events: none;
-  outline: 1px solid var(--gold); outline-offset: 14px; opacity: 0;
+  outline: 1px solid var(--gold); outline-offset: 12px; opacity: 0.6;
   transition: opacity 0.5s var(--ease), outline-offset 0.5s var(--ease);
 }
-.split-text-media__media:hover::after { opacity: 0.5; outline-offset: 10px; }
+.split-text-media__media:hover::after { opacity: 0.85; outline-offset: 9px; }
+/* image-left variant (alternating layouts) */
+.split-text-media--reverse .split-text-media__media { order: -1; }
 @media (max-width: 860px) {
   .split-text-media { grid-template-columns: 1fr; gap: 2rem; }
   .split-text-media__media { min-height: 0; }
   .split-text-media__media img { position: static; aspect-ratio: 16 / 10; }
+  /* keep text above image when stacked, even on reversed rows */
+  .split-text-media--reverse .split-text-media__media { order: 0; }
 }
 
 /* ===== Facility DETAIL pages — image left, copy right ===== */

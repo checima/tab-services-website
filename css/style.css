@@ -734,7 +734,6 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
   opacity: 0;
   transform: translateY(28px);
   transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
-  will-change: opacity, transform;
 }
 .reveal.in { opacity: 1; transform: none; }
 /* hero children stagger on load via .in applied immediately */
