@@ -730,18 +730,18 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 }
 
 /* ============================== REVEAL ANIMATION ============================== */
-.reveal {
+/* Scroll-triggered fly-in is intentionally disabled — page content is visible by
+   default. Only the hero keeps a subtle one-time fade-in on initial page load. */
+.hero .reveal {
   opacity: 0;
   transform: translateY(28px);
-  transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+  transition: opacity 1s var(--ease), transform 1s var(--ease);
 }
-.reveal.in { opacity: 1; transform: none; }
-/* hero children stagger on load via .in applied immediately */
-.hero .reveal { transition-duration: 1s; }
+.hero .reveal.in { opacity: 1; transform: none; }
 
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition-duration: 0.01ms !important; }
-  .reveal { opacity: 1; transform: none; }
+  .hero .reveal { opacity: 1; transform: none; }
   html { scroll-behavior: auto; }
 }
 
