@@ -91,10 +91,9 @@
         <div>
           <p class="form-intro reveal">Please fill out the information below if you would like a quote. You may also email us directly at <a href="mailto:estimating@tabservicescolorado.com">estimating@tabservicescolorado.com</a>.</p>
 
-          <!-- Submits to a Netlify function that attaches the Web3Forms key server-side
-               (WEB3FORMS_ACCESS_KEY env var). No key is exposed in this page. File
-               uploads are forwarded as multipart by the function. -->
-          <form class="form reveal" data-web3form data-success="Thanks! We'll send you a price quote shortly." action="/.netlify/functions/contact" method="POST">
+          <!-- Web3Forms: replace YOUR_WEB3FORMS_ACCESS_KEY with the access key emailed from web3forms.com (register it for tab@tabservicescolorado.com). Submissions are sent to that address; add clau@tabservicescolorado.com as a CC in the Web3Forms dashboard. -->
+          <form class="form reveal" data-web3form data-success="Thanks! We'll send you a price quote shortly." action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="6062f410-08b1-4a37-8a2b-7b10edbcffab" />
             <input type="hidden" name="from_name" value="TAB Services Website" />
             <input type="hidden" name="subject" value="New Quote Request — TAB Services Website" />
             <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off" />
