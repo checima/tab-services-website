@@ -39,23 +39,32 @@ npx http-server -p 4321
 # then open http://localhost:4321
 ```
 
-## ⚙️ Forms — REQUIRED one-time setup (Web3Forms)
+## ⚙️ Forms — secure setup (Web3Forms via a Netlify function)
 
-The **Request a Quote** and **Contact** forms submit through [Web3Forms](https://web3forms.com)
-(free). Until you add an access key, the forms show *"Form not configured yet."*
+The **Request a Quote** and **Contact** forms submit to a Netlify serverless function
+(`netlify/functions/contact.js`) that attaches the Web3Forms access key **server-side**.
+The key is **never in the page source or the repo** — it lives only in a Netlify
+environment variable. The function also enforces free spam protection (origin
+allow-list + honeypot + email validation) and forwards the quote form's file upload.
 
-1. Go to https://web3forms.com, enter **tab@tabservicescolorado.com**, and you'll be emailed a free **Access Key**.
-2. Open `requestquote.html` and `contact.html`, find this line in each, and paste your key:
-   ```html
-   <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" />
-   ```
-3. To **also receive submissions at clau@tabservicescolorado.com**, add it as a CC in your
-   Web3Forms dashboard (Settings → CC/BCC), or duplicate the hidden field as
-   `<input type="hidden" name="cc" value="clau@tabservicescolorado.com" />`.
-4. The quote form supports a file upload (the original "Max 15MB"); Web3Forms forwards
-   attachments on submission.
+**Required one-time setup (in Netlify):**
 
-No other backend or server is needed — submissions arrive as email.
+1. **Get a Web3Forms key** at https://web3forms.com — enter the destination inbox
+   (e.g. **tab@tabservicescolorado.com**); the key routes to whatever email you register it with.
+   To also copy **clau@tabservicescolorado.com**, add it as a CC in the Web3Forms dashboard.
+2. In Netlify → **Site configuration → Environment variables**, add
+   `WEB3FORMS_ACCESS_KEY` = your key value.
+3. **Trigger a redeploy** (Netlify → Deploys → Trigger deploy) so the function picks up the variable.
+4. Test the live forms and confirm the email arrives.
+
+Until the env var is set, the forms show *"Form is not configured yet. Please email us directly."*
+
+**Allowed origins:** `netlify/functions/contact.js` has an `ALLOWED_ORIGINS` list
+(`tabservicesco.netlify.app` + the `.com` domains). Add any new domain there.
+
+**Security:** never commit the key. If a key is ever exposed, generate a new one and
+revoke the old in the Web3Forms dashboard. The function needs Node 18+ (Netlify default)
+for global `fetch`.
 
 ## Assets
 

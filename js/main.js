@@ -125,35 +125,44 @@
     });
   });
 
-  /* ---------- Web3Forms submit (Quote + Contact) ---------- */
+  /* ---------- Secure form submit (Quote + Contact via Netlify function) ---------- */
   document.querySelectorAll("form[data-web3form]").forEach(function (form) {
     var status = form.querySelector(".form-status");
     var submitBtn = form.querySelector("[type=submit]");
     var successMsg = form.getAttribute("data-success") || "Thank you! Your message has been sent.";
+    var endpoint = form.getAttribute("action") || "/.netlify/functions/contact";
 
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-      var key = form.querySelector("[name=access_key]");
-      if (key && key.value.indexOf("YOUR_") === 0) {
-        setStatus("error", "Form not configured yet — add your Web3Forms access key. See README.");
-        return;
-      }
       var original = submitBtn ? submitBtn.textContent : "";
       if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = "Sending…"; }
       setStatus("", "");
 
-      fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: new FormData(form)
-      })
+      // Send multipart (preserves file uploads) when a file is attached; JSON otherwise.
+      var fileInput = form.querySelector("input[type=file]");
+      var hasFile = fileInput && fileInput.files && fileInput.files.length > 0;
+      var opts;
+      if (hasFile) {
+        opts = { method: "POST", body: new FormData(form) };
+      } else {
+        var payload = {};
+        new FormData(form).forEach(function (value, key) { payload[key] = value; });
+        opts = {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Accept": "application/json" },
+          body: JSON.stringify(payload)
+        };
+      }
+
+      fetch(endpoint, opts)
         .then(function (r) { return r.json(); })
         .then(function (data) {
-          if (data.success) {
+          if (data && data.success) {
             setStatus("success", successMsg);
             form.reset();
             var f = form.querySelector(".upload__file"); if (f) f.textContent = "";
           } else {
-            setStatus("error", data.message || "Something went wrong. Please email us directly.");
+            setStatus("error", (data && data.message) || "Something went wrong. Please email us directly.");
           }
         })
         .catch(function () {

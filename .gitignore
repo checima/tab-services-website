@@ -6,3 +6,6 @@ desktop.ini
 
 # Local tooling (preview server config)
 .claude/
+
+# Large original video backup (kept outside the repo)
+/hero-original-28mb.mp4

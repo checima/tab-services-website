@@ -3,3 +3,5 @@
 # and visiting /about-us.html redirects to /about-us. No extra rules needed.
 [build]
   publish = "."
+  command = ""
+  functions = "netlify/functions"
