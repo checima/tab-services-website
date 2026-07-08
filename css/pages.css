@@ -482,6 +482,24 @@
 
 .btn--submit { justify-content: center; width: fit-content; }
 
+/* Note beneath the submit button (e.g. how to send files) */
+.form-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  margin-top: 1.6rem;
+  padding: 1.05rem 1.25rem;
+  background: #fffdf5;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--gold);
+  font-size: 0.97rem;
+  line-height: 1.55;
+  color: #56544f;
+}
+.form-note__icon { flex: 0 0 auto; width: 22px; height: 22px; margin-top: 1px; color: var(--gold-deep); }
+.form-note a { color: var(--gold-deep); font-weight: 600; }
+.form-note a:hover { text-decoration: underline; }
+
 /* Form aside (contact info) */
 .form-aside { background: var(--ink); color: var(--paper); padding: clamp(2rem, 3vw, 2.6rem); position: relative; border-top: 3px solid var(--gold); }
 .form-aside h3 { font-family: var(--font-semi); font-weight: 600; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
