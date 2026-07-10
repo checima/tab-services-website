@@ -9,3 +9,7 @@ desktop.ini
 
 # Large original video backup (kept outside the repo)
 /hero-original-28mb.mp4
+
+# Separate Google Ads landing pages (kept out of the main site deploy)
+/landing-pages/
+/GOOGLE-ADS-LANDING-PAGE-SPEC.md
