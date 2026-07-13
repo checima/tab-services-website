@@ -3,3 +3,31 @@
 # and visiting /about-us.html redirects to /about-us. No extra rules needed.
 [build]
   publish = "."
+
+# Old-domain redirects: 301 every path on the retired domains to the same slug
+# on tabservicesco.com (:splat preserves the full path; query strings are carried
+# over automatically). Each retired domain + its www must be added as domains on
+# this Netlify site and pointed here via DNS for these rules to fire.
+[[redirects]]
+  from = "https://tabservicescolorado.com/*"
+  to = "https://tabservicesco.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.tabservicescolorado.com/*"
+  to = "https://tabservicesco.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://tabservicesdenver.com/*"
+  to = "https://tabservicesco.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.tabservicesdenver.com/*"
+  to = "https://tabservicesco.com/:splat"
+  status = 301
+  force = true
