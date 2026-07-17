@@ -382,8 +382,48 @@
   transition: opacity 0.5s var(--ease), outline-offset 0.5s var(--ease);
 }
 .fac-detail__media:hover::after { opacity: 0.55; outline-offset: 10px; }
+.fac-detail__copy h2 {
+  font-family: var(--font-disp); font-weight: 600;
+  font-size: 1.3rem; line-height: 1.15; white-space: nowrap;
+  margin-bottom: 0.9rem; color: var(--ink);
+}
 .fac-detail__copy .lead { margin-bottom: 1.3rem; }
 .fac-detail__copy p { color: #56544f; font-size: 1.08rem; line-height: 1.65; }
+
+.fac-longform h2 {
+  font-family: var(--font-disp); font-weight: 600; text-transform: uppercase;
+  font-size: clamp(1.6rem, 3vw, 2.2rem); line-height: 1.15;
+  margin-bottom: 1.2rem; color: var(--ink);
+}
+.fac-longform h3 {
+  font-family: var(--font-semi); font-weight: 600; font-size: 1.3rem;
+  color: var(--ink); margin: 2rem 0 1rem; white-space: nowrap;
+}
+.fac-longform .lead { font-size: 1.3rem !important; margin: 1.6rem 0; white-space: nowrap; }
+.fac-longform .fac-inline-media {
+  display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(1.75rem, 4vw, 3rem);
+  align-items: center; margin: 2.25rem 0;
+}
+.fac-longform .fac-inline-media img {
+  width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 2px;
+}
+@media (max-width: 720px) {
+  .fac-longform .fac-inline-media { grid-template-columns: 1fr; }
+}
+
+.photo-band { position: relative; overflow: hidden; }
+.photo-band img {
+  display: block; width: 100%;
+  height: clamp(260px, 42vw, 480px); object-fit: cover;
+  filter: saturate(0.96) contrast(1.02);
+}
+.photo-band__caption {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: 1.4rem clamp(1.25rem, 4vw, 3rem);
+  background: linear-gradient(0deg, rgba(0,0,0,0.65), rgba(0,0,0,0));
+  color: var(--paper); font-family: var(--font-semi); font-weight: 500;
+  font-size: 0.95rem; letter-spacing: 0.02em;
+}
 .fac-back {
   display: inline-flex; align-items: center; gap: 0.5em; margin-top: 1.8rem;
   font-family: var(--font-semi); font-weight: 600; font-size: 0.78rem;
