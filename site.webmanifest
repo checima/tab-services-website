@@ -1,0 +1,11 @@
+{
+  "name": "TAB Services Company",
+  "short_name": "TAB",
+  "icons": [
+    { "src": "/assets/img/favicon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "/assets/img/favicon-512.png", "type": "image/png", "sizes": "512x512" }
+  ],
+  "theme_color": "#2f2e2e",
+  "background_color": "#ffffff",
+  "display": "browser"
+}
