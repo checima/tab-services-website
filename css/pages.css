@@ -204,8 +204,7 @@
   font-family: var(--font-disp); font-weight: 700; font-size: 2rem; text-transform: uppercase; line-height: 1; margin-bottom: 1.2rem; color: #fff;
 }
 .team-card p { color: var(--gray-soft); font-size: 1rem; line-height: 1.6; margin-bottom: 1rem; }
-.team-card__email { color: var(--gold); font-weight: 500; transition: color 0.3s var(--ease); display: inline-block; word-break: break-word; }
-.team-card__email:hover { color: var(--gold-bright); text-decoration: underline; }
+.team-card p:last-child { margin-bottom: 0; }
 
 .creds-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: start; }
 .cert-list { display: grid; gap: 1rem; }

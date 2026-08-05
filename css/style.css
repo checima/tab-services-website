@@ -466,12 +466,16 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
   border-left: 1px solid var(--line);
 }
 .stat {
+  display: flex;
+  flex-direction: column;
   padding: clamp(1.6rem, 3vw, 2.4rem) clamp(1rem, 2vw, 1.8rem);
   border-right: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
 .stat__num {
-  display: block;
+  display: flex;
+  align-items: center;
+  flex: 1;
   font-family: var(--font-disp);
   font-weight: 700;
   font-size: clamp(2.6rem, 5vw, 3.8rem);
@@ -482,7 +486,9 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 .stat__label {
   display: block;
   margin-top: 0.7rem;
+  min-height: 2.2em;
   font-size: 0.8rem;
+  line-height: 1.1em;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--gray);
